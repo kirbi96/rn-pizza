@@ -3,7 +3,8 @@ export { default as stylesText } from "./text"
 export { default as stylesUi } from "./ui"
 
 // Screens
-// export {default as stylesContacts} from "./screens/stylesContacts"
+export {default as stylesCombo} from "./screens/stylesCombo"
+export {default as stylesHome} from "./screens/stylesHome"
 
 // Components
-// export { default as stylesCourseListItem } from "./components/stylesCourseListItem"
+

@@ -1,6 +1,6 @@
 import React from "react"
 import {View, Text, ScrollView, Image, Dimensions, TouchableOpacity} from "react-native"
-import {stylesCommon, stylesText, stylesUi} from "../../../static/styles"
+import {stylesCommon, stylesHome, stylesText, stylesUi} from '../../../static/styles';
 import PropType from "prop-types"
 
 let deviceWidth = Dimensions.get("window").width
@@ -51,7 +51,7 @@ const Home = ({navigation}) =>{
 		<View style={stylesCommon.mainContainer}>
 			<ScrollView  horizontal pagingEnabled showsHorizontalScrollIndicator={false}>
 				{bannerData.map((i, index) => (
-					<View key={index} style={[{width: deviceWidth - 50, flex: 1, flexDirection: "row", height: 150, borderRadius: 10}, index !== 0 && stylesCommon.ml10]}>
+					<View key={index} style={[stylesHome.bannerContainer, index !== 0 && stylesCommon.ml10]}>
 						<Image
 							style={[stylesCommon.imgFill, {borderRadius: 10}]}
 							source={{
@@ -65,7 +65,7 @@ const Home = ({navigation}) =>{
 			<View style={stylesCommon.mt10}>
 				{pizzaData.map((i, index) => (
 					<TouchableOpacity key={index} style={[stylesCommon.mt15, {flexDirection: "row"}]} >
-						<View style={{width: 100, height: 100}}>
+						<View style={stylesHome.imageCardContainer}>
 							<Image
 								style={[stylesCommon.imgFill, {borderRadius: 10}]}
 								source={{
@@ -73,7 +73,7 @@ const Home = ({navigation}) =>{
 								}}
 							/>
 						</View>
-						<View style={[stylesCommon.ml10, {width: deviceWidth - 140}]}>
+						<View style={[stylesCommon.ml10, ]}>
 							<Text style={stylesText.h5}>{i.name}</Text>
 							<Text style={[stylesCommon.mt5, stylesText.textGray]}>{i.des}</Text>
 							<Text style={[stylesCommon.mt5, stylesText.textRed]}>{i.price} $</Text>
